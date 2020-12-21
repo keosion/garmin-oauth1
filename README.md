@@ -10,15 +10,20 @@ composer require keosion/garmin-oauth1
 
 ## Usage
 
+Instantiate server - we will use it everywhere :
+
 ```php
-// Instantiate server - we will use it everywhere
 $server = new \keosion\OAuth1\Client\Server\GarminConnect([
     'identifier'   => 'your-consumer-id',
     'secret'       => 'your-consumer-secret',
     'callback_uri' => 'http://callback.url'
 ]);
 
------- First file ------
+```
+
+First file :
+
+```php
 // 1st part of OAuth 1.0 authentication : Fetch temporary credentials
 $temporaryCredentials = $server->getTemporaryCredentials();
 $_SESSION['temporary_credentials'] = serialize($temporaryCredentials);  // Save temporary credentials
@@ -27,7 +32,11 @@ session_write_close();
 // 2nd part of OAuth 1.0 authentication : Redirect user to the login page
 $server->authorize($temporaryCredentials);
 
------- Second file (callback destination) ------
+```
+
+Second file (callback destination) :
+
+```php
 if (!isset($_GET['oauth_token']) || !isset($_GET['oauth_verifier']) || !isset($_SESSION['temporary_credentials'])) {
     throw new Exception("Need temporary oauth credentials, oauth_token and oauth_verifier to proceed.");
 }
@@ -44,7 +53,9 @@ try {
     // handle exception
 }
 
------- Sign subsequent requests to Garmin Connect API ------
+Sign subsequent requests to Garmin Connect API. Generate headers :
+
+```php
 $headers = $server->getHeaders($tokenCredentials, 'GET', $url);
 
 ```
