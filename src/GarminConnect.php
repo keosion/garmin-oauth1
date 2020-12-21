@@ -1,11 +1,8 @@
 <?php
-namespace keosion\OAuth1\Client\Server;
+namespace utagawavtt\OAuth1\Client\Server;
 
 use League\OAuth1\Client\Server\Server;
 use League\Oauth1\Client\Credentials\TokenCredentials;
-use League\OAuth1\Client\Credentials\TemporaryCredentials;
-use GuzzleHttp\Exception\BadResponseException;
-use League\OAuth1\Client\Credentials\CredentialsInterface;
 
 class GarminConnect extends Server
 {

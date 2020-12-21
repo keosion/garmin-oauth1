@@ -5,7 +5,7 @@ This package provides a Garmin Connect Oauth 1.0 Client for the PHP League's [OA
 ## Installation
 
 ```
-composer require keosion/garmin-oauth1
+composer require utagawavtt/garmin-oauth1
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ composer require keosion/garmin-oauth1
 Instantiate server - we will use it everywhere :
 
 ```php
-$server = new \keosion\OAuth1\Client\Server\GarminConnect([
+$server = new \utagawavtt\OAuth1\Client\Server\GarminConnect([
     'identifier'   => 'your-consumer-id',
     'secret'       => 'your-consumer-secret',
     'callback_uri' => 'http://callback.url'

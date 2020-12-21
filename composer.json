@@ -1,5 +1,5 @@
 {
-  "name": "keosion/garmin-oauth1",
+  "name": "utagawavtt/garmin-oauth1",
   "description" : "Unofficial Oauth 1.0 adapter for Garmin Connect (to be used, for example, before Courses API)",
   "license": "MIT",
   "require": {
@@ -8,7 +8,7 @@
   },
   "autoload": {
     "psr-4": {
-      "keosion\\OAuth1\\Client\\Server\\": "src/"
+      "utagawavtt\\OAuth1\\Client\\Server\\": "src/"
     }
   }
 }
