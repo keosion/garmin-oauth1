@@ -1,0 +1,14 @@
+{
+  "name": "keosion/garmin-oauth1",
+  "description" : "Unofficial Oauth 1.0 adapter for Garmin Connect (to be used, for example, before Courses API)",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1.0",
+    "league/oauth1-client": "~1.8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "keosion\\OAuth1\\Client\\Server\\": "src/"
+    }
+  }
+}
