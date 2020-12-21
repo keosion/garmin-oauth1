@@ -53,6 +53,8 @@ try {
     // handle exception
 }
 
+```
+
 Sign subsequent requests to Garmin Connect API. Generate headers :
 
 ```php
