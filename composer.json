@@ -8,7 +8,7 @@
   },
   "autoload": {
     "psr-4": {
-      "utagawavtt\\OAuth1\\Client\\Server\\": "src/"
+      "UtagawaVtt\\OAuth1\\Client\\Server\\": "src/"
     }
   }
 }

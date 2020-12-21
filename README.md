@@ -13,7 +13,7 @@ composer require utagawavtt/garmin-oauth1
 Instantiate server - we will use it everywhere :
 
 ```php
-$server = new \utagawavtt\OAuth1\Client\Server\GarminConnect([
+$server = new \UtagawaVtt\OAuth1\Client\Server\GarminConnect([
     'identifier'   => 'your-consumer-id',
     'secret'       => 'your-consumer-secret',
     'callback_uri' => 'http://callback.url'

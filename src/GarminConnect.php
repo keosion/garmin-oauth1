@@ -1,5 +1,5 @@
 <?php
-namespace utagawavtt\OAuth1\Client\Server;
+namespace UtagawaVtt\OAuth1\Client\Server;
 
 use League\OAuth1\Client\Server\Server;
 use League\Oauth1\Client\Credentials\TokenCredentials;
