@@ -3,6 +3,7 @@ namespace UtagawaVtt\OAuth1\Client\Server;
 
 use League\OAuth1\Client\Server\Server;
 use League\Oauth1\Client\Credentials\TokenCredentials;
+use League\OAuth1\Client\Credentials\CredentialsInterface;
 
 class GarminConnect extends Server
 {
@@ -59,5 +60,27 @@ class GarminConnect extends Server
 
     public function userScreenName($data, TokenCredentials $tokenCredentials)
     {
+    }
+
+    protected function protocolHeader($method, $uri, CredentialsInterface $credentials, array $bodyParameters = [])
+    {
+        $parameters = array_merge(
+            $this->baseProtocolParameters(),
+            $this->additionalProtocolParameters(),
+            [
+                'oauth_token' => $credentials->getIdentifier(),
+            ],
+            $bodyParameters     // added this, garmin need 'oauth_verifier' in headers
+        );
+
+        $this->signature->setCredentials($credentials);
+
+        $parameters['oauth_signature'] = $this->signature->sign(
+            $uri,
+            array_merge($parameters, $bodyParameters),
+            $method
+        );
+
+        return $this->normalizeProtocolParameters($parameters);
     }
 }
